@@ -1,9 +1,9 @@
-
+// YOUR CODE HERE:
 var app = {
 
   //TODO: The current 'addFriend' function just adds the class 'friend'
   //to all messages sent by the user
-  server: 'http:127.0.0.1:3000/classes/chatterbox/',
+  server: 'http://127.0.0.1:3000/classes/chatterbox',
   username: 'anonymous',
   roomname: 'lobby',
   lastMessageId: 0,
@@ -34,7 +34,6 @@ var app = {
   },
 
   send: function(data) {
-    console.log("send")
     app.startSpinner();
     // Clear messages input
     app.$message.val('');
@@ -232,6 +231,11 @@ var app = {
 
   stopSpinner: function(){
     $('.spinner img').fadeOut('fast');
-    $('form input[type=submit]').attr('disabled', null);
+    $('form input[type=submit]').attr('disabled', "null");
   }
 };
+
+$(document).ready(function(){
+  app.init();
+  app.fetch();
+});
